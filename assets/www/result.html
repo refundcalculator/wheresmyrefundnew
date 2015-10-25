@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" media="screen, projection" href="css/fancySelect.css">
+<link href="css/jquery-ui.css" rel="stylesheet">
+
+<!--
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/jquery.mobile-1.4.2.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/fancySelect.js"></script>-->
+    <script>
+		/*
+        $(document).ready(function() {
+    		$('#menu').fancySelect();
+		});
+		
+		$(function() {
+			$( "#datepicker" ).datepicker();
+		});
+
+		$(document).on('vclick','#forgot', function(e){
+	  e.stopPropagation();
+       e.stopImmediatePropagation();
+	   e.preventDefault();
+		 $.mobile.changePage('index.html', { transition: "slide"});//slideup
+		 return false;
+		});	
+        */
+
+	</script>
+	<script type="text/javascript">
+ 
+  $(document).ready(function() {
+  $("#year").text( (new Date).getFullYear() );
+  });
+</script>
+
+</head>
+
+<body data-role="none">
+<div data-role="page" id="two" style="background-color: #008a8b !important;">
+<div class="home" style="background-color: none !important;">
+
+<div class="logo_img" data-role="none"><img src="images/logo.png"></div>
+
+<p>Your Expected Tax Refund Date is:</p>
+<label data-role="none">Direct Deposit:</label>
+<input data-role="none" type="text" class="input dd" id="" readonly="readonly" />
+
+<label data-role="none">Check Mailed:</label>
+<input data-role="none" type="text" class="input cm" readonly="readonly"/>
+
+
+<p><a class="last" title="Your Expected Tax Refund Date is:" href="http://www.taxschedule.com/" target="_blank">Click here for the IRS Refund Cycle Chart</a></p>
+<div class="space50"></div>
+<input data-role="none" id="forgot" class="button" value="back" style="cursor: pointer;" />
+<div class="space50"></div>
+</div>
+</div>
+
+</body>
+</html>

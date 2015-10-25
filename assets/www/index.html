@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no"/>
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
+<title>Untitled Document</title>
+
+<link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" media="screen, projection" href="css/fancySelect.css">
+<link href="css/jquery-ui.css" rel="stylesheet">
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.mobile-1.4.2.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/fancySelect.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+    <script>
+		$(document).ready(function() {
+            $(".fancy-dd").fancySelect();
+            $( ".datepicker" ).datepicker();          
+		});
+        
+		$(document).on('vclick','#forgot', function(e){
+	       e.stopPropagation();
+           e.stopImmediatePropagation();
+	       e.preventDefault();
+		   $.mobile.changePage('index.html', { transition: "slide"});//slideup
+           $(".fancy-dd").fancySelect();
+           $( ".datepicker" ).datepicker();
+		 return false;
+		});
+        
+	</script>
+
+</head>
+
+<body data-role="none">
+
+<div data-role="page" id="one">
+<div class="logo" data-role="none"><img src="images/logo2.png">
+ 
+</div>
+
+
+<form id="landing_form" method="post" enctype="multipart/form-data"> 
+<label data-role="none">When did you file your return? </label>
+<input data-role="none" type="text" class="starting input datepicker"  />
+
+<label data-role="none">How did you file? </label>
+
+<select class="when fancy-dd" id="menu" data-role="none" >
+      <option value="Email" data-role="none">E-File</option>
+      <option value="Mailed" data-role="none">Mailed</option>
+</select>
+<!--
+<div class="trigger">E-File</div>
+    <ul class="options">
+        <li class="selected" data-raw-value="Email">E-File</li>
+        <li data-raw-value="Mailed" class="">Mailed</li>
+    </ul>
+</div>-->
+
+<label data-role="none">When did the IRS accept your return? </label>
+<input data-role="none" type="text" class="input datepicker ending" />
+
+<label data-role="none">Email</label>
+<input data-role="none" type="text" class="input Emailz" />
+
+<input data-role="none" type="submit" id="result" class="button" value="Get your Refund Date"/>
+</form>
+<a href="#myPopup" data-rel="popup" class="button2" data-transition="slide">About Us</a>
+
+<div data-role="popup" id="myPopup" class="ui-content about">
+<a class="ui-btn-right ui-link ui-btn ui-btn-b ui-icon-delete ui-btn-icon-notext ui-shadow ui-corner-all" data-iconpos="notext" data-icon="delete" data-theme="b" data-role="button" data-rel="back" href="#" role="button">Close</a>
+
+      <p>"Where's My Refund?" is a resource provided by <a href="https://refundschedule.com/" target="_blank">RefundSchedule.com</a> to more easily help mobile users find the date that they can expect their tax refund. This tool is constantly updated to keep it precise and accurate. This tool uses information from our <a title="2015 IRS Refund Cycle Chart for 2014 Tax Year" href="https://refundschedule.com/2015-irs-e-file-chart/" target="_blank">IRS Refund Cycle Chart</a> and we have included a link on the app main page.
+Refund information for the most current tax year you filed will generally be available within 24 hours after we acknowledge receipt of your e-filed return. If you filed a paper return, please allow 4 weeks before checking the status.
+The "Where's My Refund?" tool doesn't include information regarding State Tax Refunds. We do have a webpage that has this information available though. Details here: <a title="Where’s my state refund 2015?" href="https://refundschedule.com/wheres-state-refund/" target="_blank">Where's My State Refund</a>.<br>
+
+DISCLAIMER:
+<br>
+This app is in no way affiliated with the Internal Revenue Service. It is purely for informational purposes to help individuals better plan their taxes. These are only estimates, the I.R.S. has refused to give exact dates to new audit process. There are no guarantees with the I.R.S this year, but one thing is for sure: The earlier you file, the earlier you will receive a return. Check the status of your Tax Return on the <a title="Where’s My Refund" href="https://refundschedule.com/wheres-refund/" target="_blank">I.R.S.’s Where’s My Refund tool</a>.</p>
+    </div>
+<script>
+//function submitForm(){
+    
+    //else{
+    //var formData = new FormData($('#landing_form')[0]);
+   // var formData = $('#upload_formle-4').serialize();
+  
+    
+  //}
+ //}
+  
+</script>
+</div>
+</body>
+</html>
